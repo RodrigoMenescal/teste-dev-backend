@@ -13,8 +13,6 @@ class ResponseDTO<T> {
 
 export class ResponseUtil {
 
-    private constructor() {}
-
     public static montaResponse<T>(dados: T, mensagem: string): ResponseDTO<T>;
     public static montaResponse(mensagem: string): ResponseDTO<null>;
     public static montaResponse<T>(dados: T): ResponseDTO<T>;
