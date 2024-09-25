@@ -23,7 +23,6 @@ export class ResponseUtil {
         if (typeof dadosOrMensagem === 'string') {
             response.setMensagem(dadosOrMensagem);
         } else {
-            // Caso contrário, tratamos como os dados
             response.setDados(dadosOrMensagem);
             if (mensagem) {
                 response.setMensagem(mensagem);

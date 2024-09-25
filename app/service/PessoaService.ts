@@ -9,7 +9,23 @@ export class PessoaService{
         this.pessoaRepository = new PessoaRepository();
     }
 
-    cadastrarPessoa(pessoa: Pessoa): Promise<Pessoa>{
+    createPessoa(pessoa: Pessoa): Promise<Pessoa>{
         return this.pessoaRepository.create(pessoa);
+    }
+
+    getAllPessoas(): Promise<Pessoa[]>{
+        return this.pessoaRepository.findAll();
+    }
+
+    getPessoaById(id: number): Promise<Pessoa| null>{
+        return this.pessoaRepository.findById(id);
+    }
+
+    updatePessoa(id: number,pessoa: Pessoa):Promise<Pessoa| null>{
+        return this.pessoaRepository.update(id, pessoa);
+    }
+
+    deletePessoa(id: number): Promise<void>{
+        return this.pessoaRepository.delete(id);
     }
 }
